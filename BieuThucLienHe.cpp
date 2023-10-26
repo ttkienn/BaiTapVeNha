@@ -1,17 +1,21 @@
 #include <iostream>
 
 int main() {
-    int n;
-    std::cin >> n;
-    
-    for (int i = 1; i <= n; i++) {
-        std::cout << "Ho";
-        if (i < n) {
-            std::cout << " ";
-        }
+    int a, b;
+    std::cin >> a >> b;
+
+    int q = a / b;
+    int r = a % b;
+
+    if (r < 0 && b > 0) {
+        q--;
+        r = a - (b * q);
+    } else if (r < 0 && b < 0) {
+        q++;
+        r = a - (b * q);
     }
-    
-    std::cout << "!" << std::endl;
-    
+
+    std::cout << q << " " << r << std::endl;
+
     return 0;
 }
